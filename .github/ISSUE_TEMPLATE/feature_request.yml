@@ -1,0 +1,19 @@
+name: Feature request
+description: Propose an addition or change to tai-config-k8s
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What should be added or changed, and what problem does it solve? Remember the ground rule — this is a provider plugin implementing the contract's ConfigManager ABC; it depends on tai-contract + tai-kit only and never imports the skeleton.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: tai-config-k8s version
+      description: The version you are using, if relevant.
+      placeholder: "0.1.0"
+    validations:
+      required: false
