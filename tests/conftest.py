@@ -1,4 +1,4 @@
-"""Shared fixtures for the tai-config-k8s test suite.
+"""Shared fixtures for the tai42-config-k8s test suite.
 
 Every test builds settings from a hermetic environment: the autouse fixture
 strips any ambient ``TAI_K8S_*`` overrides and resets the cached
@@ -11,7 +11,7 @@ from collections.abc import Iterator
 
 import pytest
 
-from tai_config_k8s.settings import k8s_config_settings
+from tai42_config_k8s.settings import k8s_config_settings
 
 _ENV_VARS = (
     "TAI_K8S_NAMESPACE",

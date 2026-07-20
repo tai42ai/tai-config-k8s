@@ -2,15 +2,15 @@
 
 Covers the field defaults, namespace resolution (service-account detection,
 fallback, and the explicit-override path that skips detection), env-var overrides,
-and the tai-kit settings cache (same instance until cleared).
+and the tai42-kit settings cache (same instance until cleared).
 """
 
 from __future__ import annotations
 
 import pytest
 
-from tai_config_k8s import settings as settings_mod
-from tai_config_k8s.settings import K8sConfigSettings, k8s_config_settings
+from tai42_config_k8s import settings as settings_mod
+from tai42_config_k8s.settings import K8sConfigSettings, k8s_config_settings
 
 
 def test_defaults(monkeypatch: pytest.MonkeyPatch, tmp_path) -> None:

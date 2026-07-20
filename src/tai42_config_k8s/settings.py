@@ -1,7 +1,7 @@
 """Kubernetes config-provider settings.
 
 Holds the ``K8sConfigSettings`` (Secret / ConfigMap names and keys) and its
-cached ``k8s_config_settings()`` accessor, built on the tai-kit settings
+cached ``k8s_config_settings()`` accessor, built on the tai42-kit settings
 machinery (``TaiBaseSettings`` + ``@settings_cache``).
 
 Environment variables
@@ -25,7 +25,7 @@ from pathlib import Path
 
 from pydantic import model_validator
 from pydantic_settings import SettingsConfigDict
-from tai_kit.settings import TaiBaseSettings, settings_cache
+from tai42_kit.settings import TaiBaseSettings, settings_cache
 
 logger = logging.getLogger(__name__)
 

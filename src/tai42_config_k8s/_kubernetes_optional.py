@@ -5,7 +5,7 @@ from __future__ import annotations
 import importlib.util
 
 
-def require_kubernetes(*, extras: str = "tai-config-k8s[k8s]") -> None:
+def require_kubernetes(*, extras: str = "tai42-config-k8s[k8s]") -> None:
     """Raise ImportError with a copy-pasteable install hint if ``kubernetes``
     is absent. Returns None on success; callers do their own import after."""
     if importlib.util.find_spec("kubernetes") is None:

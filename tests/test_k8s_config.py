@@ -9,12 +9,12 @@ absent.
 import sys
 
 import pytest
-from tai_contract.config.manager import ConfigManager
+from tai42_contract.config.manager import ConfigManager
 
-from tai_config_k8s import build_config_manager
-from tai_config_k8s import settings as settings_mod
-from tai_config_k8s._kubernetes_optional import require_kubernetes
-from tai_config_k8s.manager import K8sConfigManager
+from tai42_config_k8s import build_config_manager
+from tai42_config_k8s import settings as settings_mod
+from tai42_config_k8s._kubernetes_optional import require_kubernetes
+from tai42_config_k8s.manager import K8sConfigManager
 
 
 @pytest.fixture(autouse=True)
@@ -47,12 +47,12 @@ def test_require_kubernetes_raises_plugin_scoped_hint(monkeypatch: pytest.Monkey
     """When ``kubernetes`` is missing the guard raises ImportError naming THIS
     plugin's extra, not the source distribution's."""
     monkeypatch.setitem(sys.modules, "kubernetes", None)
-    with pytest.raises(ImportError, match=r"tai-config-k8s\[k8s\]"):
+    with pytest.raises(ImportError, match=r"tai42-config-k8s\[k8s\]"):
         require_kubernetes()
 
 
 def test_manager_construction_requires_kubernetes(monkeypatch: pytest.MonkeyPatch) -> None:
     """The manager runs the guard in ``__init__``, surfacing the missing extra."""
     monkeypatch.setitem(sys.modules, "kubernetes", None)
-    with pytest.raises(ImportError, match=r"tai-config-k8s\[k8s\]"):
+    with pytest.raises(ImportError, match=r"tai42-config-k8s\[k8s\]"):
         K8sConfigManager()

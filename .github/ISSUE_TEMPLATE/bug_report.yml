@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a defect in tai-config-k8s (the Kubernetes ConfigManager provider — Secrets for env, ConfigMaps for manifest)
+description: Report a defect in tai42-config-k8s (the Kubernetes ConfigManager provider — Secrets for env, ConfigMaps for manifest)
 labels: ["bug"]
 body:
   - type: textarea
@@ -20,7 +20,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: tai-config-k8s version
+      label: tai42-config-k8s version
       placeholder: "0.1.0"
     validations:
       required: true

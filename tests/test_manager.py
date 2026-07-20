@@ -17,8 +17,8 @@ import yaml
 from kubernetes import client
 from kubernetes.client.exceptions import ApiException
 
-from tai_config_k8s import settings as settings_mod
-from tai_config_k8s.manager import K8sConfigError, K8sConfigManager
+from tai42_config_k8s import settings as settings_mod
+from tai42_config_k8s.manager import K8sConfigError, K8sConfigManager
 
 NAMESPACE = "default"
 SECRET_NAME = "tai-env"

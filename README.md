@@ -1,21 +1,21 @@
-# tai-config-k8s
+# tai42-config-k8s
 
 [![CI](https://github.com/tai42ai/tai-config-k8s/actions/workflows/ci.yml/badge.svg)](https://github.com/tai42ai/tai-config-k8s/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 The Kubernetes `ConfigManager` provider for the TAI ecosystem — a separately
-installed plugin. It implements the `tai_contract.config.manager.ConfigManager`
+installed plugin. It implements the `tai42_contract.config.manager.ConfigManager`
 ABC for the `k8s` config mode:
 
 - **env** configuration via a K8s **Secret**
 - **manifest** configuration via a K8s **ConfigMap** (with `!ENV`-tag
-  round-tripping through the tai-kit yaml utilities)
+  round-tripping through the tai42-kit yaml utilities)
 
-Its only tai-* dependencies are `tai-contract` (the interface it implements) and
-`tai-kit` (settings machinery + manifest yaml helpers). It **never** imports the
+Its only tai-* dependencies are `tai42-contract` (the interface it implements) and
+`tai42-kit` (settings machinery + manifest yaml helpers). It **never** imports the
 skeleton — it is loaded by the skeleton's config seam through the
 `build_config_manager()` factory convention by dynamic import (the skeleton names
-this module as the string `"tai_config_k8s.manager"`, so there is no static edge
+this module as the string `"tai42_config_k8s.manager"`, so there is no static edge
 in either direction).
 
 ## The TAI ecosystem
@@ -40,7 +40,7 @@ server, with the optional `[k8s]` extra that pulls the kubernetes client:
 
 ```bash
 git clone https://github.com/tai42ai/tai-config-k8s
-uv add --editable "../tai-config-k8s[k8s]"   # once published: uv add tai-config-k8s[k8s]
+uv add --editable "../tai-config-k8s[k8s]"   # once published: uv add tai42-config-k8s[k8s]
 ```
 
 The `kubernetes` client is an optional `[k8s]` extra, imported lazily inside

@@ -7,11 +7,11 @@ import tomllib
 from pathlib import Path
 
 import yaml
-from tai_contract.plugins import PluginSpec
+from tai42_contract.plugins import PluginSpec
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 _ROOT_SPEC = _REPO_ROOT / "tai-plugin.yml"
-_PACKAGED_SPEC = _REPO_ROOT / "src" / "tai_config_k8s" / "tai-plugin.yml"
+_PACKAGED_SPEC = _REPO_ROOT / "src" / "tai42_config_k8s" / "tai-plugin.yml"
 
 
 def _spec() -> PluginSpec:
@@ -40,7 +40,7 @@ def test_plugin_spec_is_declared_as_package_data():
         "package-data"
     ]
     shipping_keys = [key for key, files in package_data.items() if "tai-plugin.yml" in files]
-    assert shipping_keys == ["tai_config_k8s"], (
+    assert shipping_keys == ["tai42_config_k8s"], (
         "exactly one package-data entry must ship tai-plugin.yml so the wheel includes the spec; "
         f"found {shipping_keys!r}"
     )

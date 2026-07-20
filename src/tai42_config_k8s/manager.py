@@ -1,15 +1,15 @@
 """Kubernetes-based configuration manager.
 
-Implements :class:`~tai_contract.config.manager.ConfigManager` for the ``k8s``
+Implements :class:`~tai42_contract.config.manager.ConfigManager` for the ``k8s``
 config mode.  Reads and writes environment configuration via K8s Secrets and
 manifest configuration via K8s ConfigMaps.
 
-Requires the ``kubernetes`` package (install with ``pip install tai-config-k8s[k8s]``).
+Requires the ``kubernetes`` package (install with ``pip install tai42-config-k8s[k8s]``).
 
 The module exposes a :func:`build_config_manager` factory — the selection
 convention every config provider follows. The skeleton's config factory loads
 this provider by dynamic import (its ``k8s`` map entry is the string
-``"tai_config_k8s.manager"``), so there is no static skeleton dependency on this
+``"tai42_config_k8s.manager"``), so there is no static skeleton dependency on this
 plugin and no plugin dependency on the skeleton.
 """
 
@@ -24,10 +24,10 @@ from typing import TYPE_CHECKING, Any, cast
 import yaml
 from pyaml_env import parse_config
 from ruamel.yaml.comments import CommentedMap
-from tai_contract.config.manager import ConfigManager
-from tai_kit.utils.data import load_manifest, merge_and_dump_manifest
+from tai42_contract.config.manager import ConfigManager
+from tai42_kit.utils.data import load_manifest, merge_and_dump_manifest
 
-from tai_config_k8s.settings import K8sConfigSettings, k8s_config_settings
+from tai42_config_k8s.settings import K8sConfigSettings, k8s_config_settings
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -63,7 +63,7 @@ class K8sConfigManager(ConfigManager):
     """
 
     def __init__(self) -> None:
-        from tai_config_k8s._kubernetes_optional import require_kubernetes
+        from tai42_config_k8s._kubernetes_optional import require_kubernetes
 
         require_kubernetes()
 
