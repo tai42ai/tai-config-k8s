@@ -1690,7 +1690,7 @@ wheels = [
 
 [[package]]
 name = "tai42-config-k8s"
-version = "0.2.0"
+version = "0.2.1"
 source = { editable = "." }
 dependencies = [
     { name = "pyaml-env" },
@@ -1725,7 +1725,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.11" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "ruamel-yaml", specifier = ">=0.18" },
-    { name = "tai42-contract", specifier = ">=0.2,<0.3" },
+    { name = "tai42-contract", specifier = ">=0.2,<0.4" },
     { name = "tai42-kit", specifier = ">=0.2,<0.3" },
 ]
 provides-extras = ["k8s"]
